@@ -1,0 +1,71 @@
+html {
+    font-size: calc(14px + 1vw);
+    line-height: 1.2rem;
+    /* height: 190vh; */
+    /* overflow: hidden; */
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 6vh;
+    height: inherit;
+    margin: 0;
+    text-align: center;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+h1 {
+    font-size: 1.7rem;
+}
+
+.header {
+    font-size: 0.7rem;
+    position: fixed;
+    top: 0;
+    width: calc(100%);
+    margin: 0;
+    display: block;
+    z-index: 1000;
+    height: 6vh;
+    background: black;
+    color: white;
+}
+
+.header_inner {
+    margin: auto;
+    width: 80vw;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header ul {
+   
+}
+
+.header ul li , .logo{
+    display: inline-block;
+    margin-left: 0;
+    padding: 0.5rem;
+}
+
+.header ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.header ul li a:hover {
+    color: rgb(8, 240, 162);
+}
+
+.hero-full {
+    height: 94vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
