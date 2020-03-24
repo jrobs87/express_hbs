@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;//Loads the handlebars module
+require('dotenv').config()
+const portServer = process.env.PORT || process.env.PORTSERVER;//Loads the handlebars module
+const portView = process.env.PORTVIEW;  
 const handlebars = require('express-handlebars');//Sets our app to use the handlebars engine
 //instead of app.set('view engine', 'handlebars'); 
 app.set('view engine', 'hbs');//instead of app.engine('handlebars', handlebars({
@@ -17,7 +19,7 @@ app.get('/', (req, res) => {
     fakeApi = () => 'Faker'; // API Call Here :)
     console.log(`Rendered root and fake API call.`);
   
-        res.render('main', { layout: 'index', proPlayer: fakeApi() });
+        res.render('main', { layout: 'index', port: {dev: portView, server: portServer} });
     
 })
 
@@ -25,4 +27,4 @@ app.get('/new', (req, res) => {
     res.render('new', { layout: 'index'} )
 })
 
-app.listen(port, () => console.log(`App listening to port ${port}`));
+app.listen(portServer, () => console.log(`App listening to port ${portServer}`));
