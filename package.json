@@ -5,18 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node server.js\" \"close http://localhost:3000\"",
-    "dev": "nodemon"
+    "start": "concurrently \"node server.js\" \"open http://localhost:3000\"",
+    "dev": "concurrently \"gulp dev\" \"nodemon server.js\"",
+    "code": "npm run dev && npm run ui",
+    "ui": "browser-sync start --proxy=localhost:3000 --files='src/*.css, **/*.hbs, src/*.js, public/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.1.0",
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0"
+    "express-handlebars": "^3.1.0",
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-uglify": "^3.0.2",
     "nodemon": "^2.0.2"
   }
 }
